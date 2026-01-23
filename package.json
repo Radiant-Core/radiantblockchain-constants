@@ -55,7 +55,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/radiantblockchain/constants.git"
+    "url": "https://github.com/Radiant-Core/radiantblockchain-constants.git"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
