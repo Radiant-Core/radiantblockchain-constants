@@ -94,10 +94,43 @@ export type {
   DaaModeId,
 } from './glyph';
 
+// WAVE Protocol (REP-3011)
+export {
+  WAVE_CHARS,
+  WAVE_OUTPUT_COUNT,
+  WaveLimits,
+  WaveProtocols,
+  WaveSchema,
+  ZoneRecordType,
+  WavePermission,
+  charToIndex,
+  indexToChar,
+  charToOutputIndex,
+  outputIndexToChar,
+  validateWaveName,
+  validateDomain,
+  isPunycode,
+  parseLabels,
+  joinLabels,
+  createWaveMetadata,
+  createZoneUpdate,
+  getCharacterPath,
+  estimateResolutionSize,
+} from './wave';
+export type {
+  WaveZoneRecords,
+  WaveDelegation,
+  WaveNameData,
+  WaveMetadata,
+  WavePathStep,
+  WaveResolutionProof,
+  WaveResolution,
+} from './wave';
+
 /**
  * Package version
  */
-export const VERSION = '1.0.0';
+export const VERSION = '1.1.0';
 
 /**
  * Useful constants for script building
