@@ -85,6 +85,7 @@ export const PROTOCOL_REQUIREMENTS: Record<number, number[]> = {
   [GlyphProtocol.GLYPH_MUT]: [GlyphProtocol.GLYPH_NFT], // Mutable requires NFT
   [GlyphProtocol.GLYPH_CONTAINER]: [GlyphProtocol.GLYPH_NFT], // Container requires NFT
   [GlyphProtocol.GLYPH_ENCRYPTED]: [GlyphProtocol.GLYPH_NFT], // Encrypted requires NFT
+  [GlyphProtocol.GLYPH_TIMELOCK]: [GlyphProtocol.GLYPH_ENCRYPTED], // Timelock requires Encrypted (v2 spec Section 3.5)
   [GlyphProtocol.GLYPH_AUTHORITY]: [GlyphProtocol.GLYPH_NFT], // Authority requires NFT
   [GlyphProtocol.GLYPH_WAVE]: [GlyphProtocol.GLYPH_NFT, GlyphProtocol.GLYPH_MUT], // WAVE requires NFT + Mutable
 };
@@ -97,13 +98,16 @@ export const PROTOCOL_EXCLUSIONS: [number, number][] = [
 ];
 
 /**
- * Protocols that cannot exist alone
+ * Protocols that cannot exist alone (action markers or modifiers)
  */
 export const PROTOCOLS_REQUIRE_BASE: number[] = [
   GlyphProtocol.GLYPH_DMINT,
   GlyphProtocol.GLYPH_MUT,
-  GlyphProtocol.GLYPH_BURN,
+  GlyphProtocol.GLYPH_BURN, // BURN is an action marker, must accompany FT or NFT
   GlyphProtocol.GLYPH_CONTAINER,
+  GlyphProtocol.GLYPH_ENCRYPTED,
+  GlyphProtocol.GLYPH_TIMELOCK,
+  GlyphProtocol.GLYPH_AUTHORITY,
   GlyphProtocol.GLYPH_WAVE,
 ];
 
@@ -142,6 +146,16 @@ export function validateProtocols(protocols: number[]): { valid: boolean; error?
       valid: false,
       error: `Protocol ${getProtocolName(protocols[0])} cannot exist alone`,
     };
+  }
+
+  // BURN must accompany FT or NFT (it's an action marker)
+  if (protocols.includes(GlyphProtocol.GLYPH_BURN)) {
+    if (!protocols.includes(GlyphProtocol.GLYPH_FT) && !protocols.includes(GlyphProtocol.GLYPH_NFT)) {
+      return {
+        valid: false,
+        error: 'BURN must accompany FT or NFT',
+      };
+    }
   }
 
   return { valid: true };
