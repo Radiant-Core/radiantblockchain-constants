@@ -30,8 +30,22 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Type check
-        run: npx tsc --noEmit
+<<<<<<< /Users/main/Downloads/radiantblockchain-constants/.github/workflows/ci.yml
+      - name: Run tests
+        run: npm test
+=======
+      - name: Run tests with coverage
+        run: npm test -- --coverage
+
+      - name: Upload coverage to Codecov
+        if: matrix.node-version == '20.x'
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: false
+>>>>>>> /Users/main/.windsurf/worktrees/radiantblockchain-constants/radiantblockchain-constants-0193ba7e/.github/workflows/ci.yml
+
+      - name: Lint
+        run: npm run lint
 
   publish-dry-run:
     runs-on: ubuntu-latest
