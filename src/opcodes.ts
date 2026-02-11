@@ -207,6 +207,10 @@ export const Opcodes = {
   OP_STATESCRIPTBYTECODE_OUTPUT: 0xec,
   OP_PUSH_TX_STATE: 0xed,
 
+  // Glyph v2 dMint hash opcodes (Hard Fork V2)
+  OP_BLAKE3: 0xee,
+  OP_K12: 0xef,
+
   // Invalid
   INVALIDOPCODE: 0xff,
 } as const;
@@ -232,7 +236,7 @@ export function getOpcodeName(opcode: number): string {
  * Check if opcode is a Radiant-specific opcode (not in Bitcoin)
  */
 export function isRadiantOpcode(opcode: number): boolean {
-  return (opcode >= 0xbd && opcode <= 0xed) || 
+  return (opcode >= 0xbd && opcode <= 0xef) || 
          opcode === Opcodes.OP_CHECKDATASIG ||
          opcode === Opcodes.OP_CHECKDATASIGVERIFY ||
          opcode === Opcodes.OP_REVERSEBYTES;
