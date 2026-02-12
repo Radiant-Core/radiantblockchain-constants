@@ -142,6 +142,19 @@ This package includes all Radiant-specific opcodes not found in Bitcoin:
 - `OP_CODESCRIPTHASHVALUESUM_UTXOS` - Sum by code script hash
 - ... and more
 
+### V2 Hard Fork Opcodes (Activation: Block 410,000)
+
+These opcodes are gated behind `SCRIPT_ENHANCED_REFERENCES` and activate at the V2 hard fork height:
+
+| Opcode | Hex | Description |
+|--------|-----|-------------|
+| `OP_BLAKE3` | `0xee` | Blake3 hash (32-byte output) |
+| `OP_K12` | `0xef` | KangarooTwelve hash (32-byte output) |
+| `OP_LSHIFT` | `0x98` | Bitwise left shift (re-enabled) |
+| `OP_RSHIFT` | `0x99` | Bitwise right shift (re-enabled) |
+| `OP_2MUL` | `0x8d` | Multiply by 2 (re-enabled) |
+| `OP_2DIV` | `0x8e` | Divide by 2, truncation toward zero (re-enabled) |
+
 ### State Separator (0xBD-0xBF)
 - `OP_STATESEPARATOR` - Separates state from code script
 - `OP_STATESEPARATORINDEX_UTXO` - Get separator index
