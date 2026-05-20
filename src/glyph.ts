@@ -1,5 +1,5 @@
 /**
- * @radiantblockchain/constants - Glyph v2 Token Standard Constants
+ * @radiant-core/constants - Glyph v2 Token Standard Constants
  * 
  * Protocol constants for the Glyph v2 token standard.
  * Reference: Glyph v2 Token Standard Whitepaper

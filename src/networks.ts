@@ -1,5 +1,5 @@
 /**
- * @radiantblockchain/constants - Network Parameters
+ * @radiant-core/constants - Network Parameters
  * 
  * Network-specific parameters for Radiant Blockchain.
  * 

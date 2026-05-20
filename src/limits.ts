@@ -1,5 +1,5 @@
 /**
- * @radiantblockchain/constants - Limits
+ * @radiant-core/constants - Limits
  * 
  * Script and transaction limits for Radiant Blockchain.
  * These are consensus-critical values.

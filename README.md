@@ -1,4 +1,4 @@
-# @radiantblockchain/constants
+# @radiant-core/constants
 
 Shared constants for Radiant Blockchain development tools.
 
@@ -10,9 +10,9 @@ This package provides opcodes, limits, flags, and network parameters used across
 ## Installation
 
 ```bash
-npm install @radiantblockchain/constants
+npm install @radiant-core/constants
 # or
-yarn add @radiantblockchain/constants
+yarn add @radiant-core/constants
 ```
 
 ## Usage
@@ -27,23 +27,23 @@ import {
   Networks,
   getOpcodeName,
   isRadiantOpcode,
-} from '@radiantblockchain/constants';
+} from '@radiant-core/constants';
 ```
 
 ### Import Specific Modules
 
 ```typescript
 // Just opcodes
-import { Opcodes, getOpcodeName } from '@radiantblockchain/constants/opcodes';
+import { Opcodes, getOpcodeName } from '@radiant-core/constants/opcodes';
 
 // Just limits
-import { Limits, toPhotons } from '@radiantblockchain/constants/limits';
+import { Limits, toPhotons } from '@radiant-core/constants/limits';
 
 // Just flags
-import { ScriptFlags, STANDARD_SCRIPT_VERIFY_FLAGS } from '@radiantblockchain/constants/flags';
+import { ScriptFlags, STANDARD_SCRIPT_VERIFY_FLAGS } from '@radiant-core/constants/flags';
 
 // Just networks
-import { mainnet, testnet, getNetwork } from '@radiantblockchain/constants/networks';
+import { mainnet, testnet, getNetwork } from '@radiant-core/constants/networks';
 ```
 
 ## API Reference
@@ -51,7 +51,7 @@ import { mainnet, testnet, getNetwork } from '@radiantblockchain/constants/netwo
 ### Opcodes
 
 ```typescript
-import { Opcodes, getOpcodeName, isRadiantOpcode } from '@radiantblockchain/constants';
+import { Opcodes, getOpcodeName, isRadiantOpcode } from '@radiant-core/constants';
 
 // Get opcode value
 console.log(Opcodes.OP_CHECKSIG);        // 0xac
@@ -70,7 +70,7 @@ console.log(isRadiantOpcode(0xd0));      // true (Radiant opcode)
 ### Limits
 
 ```typescript
-import { Limits, toPhotons, toRxd } from '@radiantblockchain/constants';
+import { Limits, toPhotons, toRxd } from '@radiant-core/constants';
 
 // Script limits
 console.log(Limits.MAX_SCRIPT_SIZE);         // 32_000_000
@@ -90,7 +90,7 @@ import {
   STANDARD_SCRIPT_VERIFY_FLAGS,
   hasFlag,
   getFlagNames 
-} from '@radiantblockchain/constants';
+} from '@radiant-core/constants';
 
 // Check flags
 const flags = STANDARD_SCRIPT_VERIFY_FLAGS;
@@ -105,7 +105,7 @@ console.log(getFlagNames(flags));
 ### Networks
 
 ```typescript
-import { mainnet, testnet, getNetwork, ElectrumServers } from '@radiantblockchain/constants';
+import { mainnet, testnet, getNetwork, ElectrumServers } from '@radiant-core/constants';
 
 // Network parameters
 console.log(mainnet.port);           // 7333

@@ -1,5 +1,5 @@
 /**
- * @radiantblockchain/constants - WAVE Protocol Constants and Utilities
+ * @radiant-core/constants - WAVE Protocol Constants and Utilities
  * 
  * Reference implementation for WAVE: A Peer-to-Peer Radiant Blockchain Name System
  * 

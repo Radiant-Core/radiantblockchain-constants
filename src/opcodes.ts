@@ -1,5 +1,5 @@
 /**
- * @radiantblockchain/constants - Opcodes
+ * @radiant-core/constants - Opcodes
  * 
  * Complete opcode definitions for Radiant Blockchain.
  * Includes all Bitcoin-compatible opcodes plus Radiant-specific extensions.

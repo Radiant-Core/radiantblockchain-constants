@@ -1,5 +1,5 @@
 /**
- * @radiantblockchain/constants
+ * @radiant-core/constants
  * 
  * Shared constants for Radiant Blockchain development tools.
  * This package provides opcodes, limits, flags, and network parameters

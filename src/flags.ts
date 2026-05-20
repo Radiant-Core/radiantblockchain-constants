@@ -1,5 +1,5 @@
 /**
- * @radiantblockchain/constants - Script Verification Flags
+ * @radiant-core/constants - Script Verification Flags
  * 
  * Flags that control script verification behavior.
  * These are consensus-critical values.
